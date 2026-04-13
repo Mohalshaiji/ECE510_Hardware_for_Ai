@@ -1,0 +1,134 @@
+RC-DFA VAE — cProfile (first 3 batches of epoch 1)
+Platform : Windows-10-10.0.26200-SP0
+Python   : 3.10.6
+PyTorch  : 2.12.0.dev20260407+cu128
+Device   : CPU (forced)
+Batch sz : 64
+
+--- Sorted by cumulative time ---
+         11367 function calls (11100 primitive calls) in 10.485 seconds
+
+   Ordered by: cumulative time
+   List reduced from 207 to 50 due to restriction <50>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        3    0.125    0.042   10.485    3.495 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:852(train_step)
+       57    0.006    0.000    8.737    0.153 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\utils\_contextlib.py:120(decorate_context)
+       12    6.054    0.504    8.359    0.697 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:307(get_feedback_map)
+      195    1.130    0.006    1.130    0.006 {built-in method torch.tanh}
+      183    1.126    0.006    1.126    0.006 {built-in method torch._C._nn.avg_pool2d}
+        3    0.000    0.000    0.582    0.194 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\_tensor.py:576(backward)
+        3    0.000    0.000    0.582    0.194 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\autograd\__init__.py:253(backward)
+        3    0.000    0.000    0.582    0.194 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\autograd\graph.py:869(_engine_run_backward)
+        3    0.582    0.194    0.582    0.194 {method 'run_backward' of 'torch._C._EngineBase' objects}
+       66    0.000    0.000    0.502    0.008 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\modules\module.py:1774(_wrapped_call_impl)
+       66    0.001    0.000    0.502    0.008 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\modules\module.py:1782(_call_impl)
+      243    0.005    0.000    0.477    0.002 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\functional.py:176(einsum)
+      243    0.471    0.002    0.471    0.002 {built-in method torch.einsum}
+       12    0.017    0.001    0.416    0.035 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:326(compute_weight_gradient)
+        3    0.001    0.000    0.391    0.130 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:537(decode)
+       15    0.034    0.002    0.352    0.023 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:406(get_error_signal)
+       27    0.319    0.012    0.319    0.012 {built-in method torch.conv_transpose2d}
+       12    0.000    0.000    0.271    0.023 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\modules\conv.py:1169(forward)
+        3    0.002    0.001    0.195    0.065 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:567(get_encoder_layer_inputs)
+      696    0.147    0.000    0.147    0.000 {method 'reshape' of 'torch._C.TensorBase' objects}
+       21    0.000    0.000    0.140    0.007 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\modules\conv.py:564(forward)
+       21    0.000    0.000    0.140    0.007 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\modules\conv.py:546(_conv_forward)
+       21    0.140    0.007    0.140    0.007 {built-in method torch.conv2d}
+       21    0.000    0.000    0.072    0.003 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\modules\batchnorm.py:176(forward)
+       21    0.000    0.000    0.070    0.003 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\functional.py:2811(batch_norm)
+       21    0.069    0.003    0.069    0.003 {built-in method torch.batch_norm}
+        9    0.058    0.006    0.058    0.006 {built-in method torch.cat}
+       27    0.000    0.000    0.052    0.002 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\functional.py:5374(pad)
+       27    0.052    0.002    0.052    0.002 {built-in method torch._C._nn.pad}
+       21    0.000    0.000    0.040    0.002 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\functional.py:1712(relu)
+       21    0.040    0.002    0.040    0.002 {built-in method torch.relu}
+       24    0.018    0.001    0.018    0.001 {method 'mean' of 'torch._C.TensorBase' objects}
+       24    0.017    0.001    0.018    0.001 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:245(step)
+       39    0.000    0.000    0.017    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\_tensor.py:896(norm)
+       39    0.001    0.000    0.017    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\functional.py:1685(norm)
+       12    0.000    0.000    0.017    0.001 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\modules\activation.py:139(forward)
+       42    0.017    0.000    0.017    0.000 {built-in method torch._C._linalg.linalg_vector_norm}
+        3    0.000    0.000    0.013    0.004 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\optim\lr_scheduler.py:162(wrapper)
+        3    0.000    0.000    0.013    0.004 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\optim\optimizer.py:514(wrapper)
+        3    0.000    0.000    0.012    0.004 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\optim\optimizer.py:60(_use_grad)
+        3    0.000    0.000    0.012    0.004 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\optim\adam.py:214(step)
+        3    0.000    0.000    0.012    0.004 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\optim\optimizer.py:131(maybe_fallback)
+        3    0.000    0.000    0.012    0.004 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\optim\adam.py:902(adam)
+        3    0.004    0.001    0.012    0.004 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\optim\adam.py:347(_single_tensor_adam)
+       15    0.000    0.000    0.007    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\functional.py:1386(adaptive_avg_pool2d)
+      411    0.007    0.000    0.007    0.000 {method 'permute' of 'torch._C.TensorBase' objects}
+       15    0.007    0.000    0.007    0.000 {built-in method torch._C._nn.adaptive_avg_pool2d}
+       12    0.000    0.000    0.006    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\_compile.py:42(inner)
+       12    0.000    0.000    0.006    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\_dynamo\eval_frame.py:1254(_fn)
+       12    0.003    0.000    0.005    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\optim\optimizer.py:1029(zero_grad)
+
+
+
+--- Sorted by tottime ---
+         11367 function calls (11100 primitive calls) in 10.485 seconds
+
+   Ordered by: internal time
+   List reduced from 207 to 50 due to restriction <50>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       12    6.054    0.504    8.359    0.697 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:307(get_feedback_map)
+      195    1.130    0.006    1.130    0.006 {built-in method torch.tanh}
+      183    1.126    0.006    1.126    0.006 {built-in method torch._C._nn.avg_pool2d}
+        3    0.582    0.194    0.582    0.194 {method 'run_backward' of 'torch._C._EngineBase' objects}
+      243    0.471    0.002    0.471    0.002 {built-in method torch.einsum}
+       27    0.319    0.012    0.319    0.012 {built-in method torch.conv_transpose2d}
+      696    0.147    0.000    0.147    0.000 {method 'reshape' of 'torch._C.TensorBase' objects}
+       21    0.140    0.007    0.140    0.007 {built-in method torch.conv2d}
+        3    0.125    0.042   10.485    3.495 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:852(train_step)
+       21    0.069    0.003    0.069    0.003 {built-in method torch.batch_norm}
+        9    0.058    0.006    0.058    0.006 {built-in method torch.cat}
+       27    0.052    0.002    0.052    0.002 {built-in method torch._C._nn.pad}
+       21    0.040    0.002    0.040    0.002 {built-in method torch.relu}
+       15    0.034    0.002    0.352    0.023 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:406(get_error_signal)
+       24    0.018    0.001    0.018    0.001 {method 'mean' of 'torch._C.TensorBase' objects}
+       24    0.017    0.001    0.018    0.001 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:245(step)
+       42    0.017    0.000    0.017    0.000 {built-in method torch._C._linalg.linalg_vector_norm}
+       12    0.017    0.001    0.416    0.035 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:326(compute_weight_gradient)
+      411    0.007    0.000    0.007    0.000 {method 'permute' of 'torch._C.TensorBase' objects}
+       15    0.007    0.000    0.007    0.000 {built-in method torch._C._nn.adaptive_avg_pool2d}
+       57    0.006    0.000    8.737    0.153 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\utils\_contextlib.py:120(decorate_context)
+      243    0.005    0.000    0.477    0.002 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\functional.py:176(einsum)
+        3    0.004    0.001    0.012    0.004 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\optim\adam.py:347(_single_tensor_adam)
+       72    0.003    0.000    0.003    0.000 {method 'sqrt' of 'torch._C.TensorBase' objects}
+        3    0.003    0.001    0.003    0.001 {built-in method torch._C._nn.mse_loss}
+       12    0.003    0.000    0.005    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\optim\optimizer.py:1029(zero_grad)
+       15    0.003    0.000    0.003    0.000 {built-in method torch._ops.profiler._record_function_enter_new}
+        3    0.002    0.001    0.002    0.001 {built-in method torch.sigmoid}
+        3    0.002    0.001    0.195    0.065 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:567(get_encoder_layer_inputs)
+       12    0.002    0.000    0.002    0.000 {built-in method torch.zeros}
+       48    0.001    0.000    0.001    0.000 {method 'addcdiv_' of 'torch._C.TensorBase' objects}
+       69    0.001    0.000    0.001    0.000 {method 'add_' of 'torch._C.TensorBase' objects}
+       48    0.001    0.000    0.001    0.000 {method 'lerp_' of 'torch._C.TensorBase' objects}
+       48    0.001    0.000    0.001    0.000 {method 'mul_' of 'torch._C.TensorBase' objects}
+        3    0.001    0.000    0.001    0.000 {built-in method torch._foreach_norm}
+       21    0.001    0.000    0.001    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\modules\batchnorm.py:494(_check_input_dim)
+       66    0.001    0.000    0.502    0.008 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\modules\module.py:1782(_call_impl)
+       48    0.001    0.000    0.001    0.000 {method 'addcmul_' of 'torch._C.TensorBase' objects}
+       39    0.001    0.000    0.017    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\functional.py:1685(norm)
+        3    0.001    0.000    0.391    0.130 C:\Users\mohal\OneDrive\Desktop\ece510\tiled\tiled_profile.py:537(decode)
+        3    0.001    0.000    0.001    0.000 {built-in method torch._foreach_mul_}
+      345    0.001    0.000    0.001    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\modules\module.py:1954(__getattr__)
+       66    0.000    0.000    0.000    0.000 {built-in method torch._C._get_tracing_state}
+       72    0.000    0.000    0.001    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\modules\module.py:1971(__setattr__)
+ 1041/897    0.000    0.000    0.001    0.000 {built-in method builtins.isinstance}
+       48    0.000    0.000    0.000    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\modules\container.py:124(_get_item_by_idx)
+      174    0.000    0.000    0.001    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\autograd\grad_mode.py:184(__init__)
+       21    0.000    0.000    0.072    0.003 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\nn\modules\batchnorm.py:176(forward)
+       12    0.000    0.000    0.006    0.000 C:\Users\mohal\OneDrive\Desktop\ece510\venv\lib\site-packages\torch\_dynamo\eval_frame.py:1254(_fn)
+       39    0.000    0.000    0.000    0.000 {method 'detach' of 'torch._C.TensorBase' objects}
+
+
+
+--- Per-epoch wall times (all epochs, seconds) ---
+  epoch    1: 89.41s
+  epoch    2: 84.99s
+  epoch    3: 85.12s
+
+Median epoch time : 85.12s
+Mean   epoch time : 86.51s
