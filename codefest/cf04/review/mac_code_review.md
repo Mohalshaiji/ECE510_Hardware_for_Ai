@@ -244,11 +244,20 @@ missing port directions. Both are functionally correct for the given specificati
 ## 8. Corrected File
 
 `mac_correct.v` incorporates all three fixes: explicit `32'sd0` reset, a named `product` wire with
-manual sign-extension via bit-replication, and `begin`/`end` on all branches. It compiles cleanly with:
+manual sign-extension via bit-replication, and `begin`/`end` on all branches.
 
-```powershell
-iverilog -g2012 -o mac_sim.vvp mac_correct.v mac_tb.v
-vvp mac_sim.vvp
+### Simulation log (`sim_log_mac_correct.txt`)
+
+```
+PS C:\Users\Mohal\downloads> iverilog -g2012 -o mac_sim.vvp mac_correct.v mac_tb.v
+PS C:\Users\Mohal\downloads> vvp mac_sim.vvp | Tee-Object -FilePath sim_log_mac_correct.txt
+PASS [Phase1 cycle1] out=12
+PASS [Phase1 cycle2] out=24
+PASS [Phase1 cycle3] out=36
+PASS [Reset cycle] out=0
+PASS [Phase3 cycle1] out=-10
+PASS [Phase3 cycle2] out=-20
+All tests PASSED.
 ```
 
-and passes all 6 testbench assertions.
+All 6 assertions pass. Zero failures.
