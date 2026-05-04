@@ -1,0 +1,20 @@
+VCD info: dumpfile sim/interface_wave.vcd opened for output.
+=== tb_interface: UCIe AXI-S Interface Module ===
+    N_IN=64 N_OUT=64 FLIT_W=512 IN_FLITS=4 OUT_FLITS=4
+  [PASS] dy=1 after reset
+  [PASS] id=0 after reset
+  --- Write transaction ---
+  [PASS] lsed after TLAST
+  [PASS] [0] == e_stim[0]
+  [PASS] ] == e_stim[N-1]
+  [PASS]  while computing
+  --- Read transaction ---
+  [PASS]  after core_done
+  [PASS] d == fb_stimulus
+  [PASS] l flit (index 3)
+  --- Second write-read cycle ---
+  [PASS] ts after TX_DONE
+  [PASS]  on second write
+--- 11 / 11 checks passed ---
+RESULT: PASS
+tb/tb_interface.sv:223: $finish called at 44600 (1ps)
