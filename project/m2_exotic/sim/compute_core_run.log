@@ -1,0 +1,18 @@
+VCD info: dumpfile sim/compute_core_wave.vcd opened for output.
+=== tb_compute_core: RC-DFA Reservoir Digital Controller ===
+    N_IN=64  N_RES=128  N_OUT=64  T=20
+    Input: mixed-sign 64-ch error vector (non-trivial)
+  [PASS]               done=0 after reset
+  [PASS]       sample_pulse=0 after reset
+    FSM started, awaiting T=20 sample pulses + done...
+  [PASS]     done asserted after T cycles
+  [PASS]    sample_pulse count == T_STEPS
+  [PASS]                  fb_out non-zero
+  [PASS] out values in tanh range [-1,+1]
+  [PASS] .5 (NODE_IDX[0]=88, adc pattern)
+  [PASS] 5 (NODE_IDX[1]=110, adc pattern)
+  [PASS]    done de-asserts after DONE_ST
+  [PASS]        done on second invocation
+--- 10 / 10 checks passed ---
+RESULT: PASS
+tb/tb_compute_core.sv:247: $finish called at 70500 (1ps)
