@@ -1,0 +1,1669 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)
+Loaded SDC plugin
+
+1. Executing Liberty frontend: /home/mohal/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+[INFO] Using SDC file '/mnt/c/Users/mohal/Downloads/runs/RUN_2026-05-18_03-59-58/06-yosys-synthesis/synthesis.abc.sdc' for ABC…
+
+2. Executing Verilog-2005 frontend: /mnt/c/Users/mohal/Downloads/synth_top.sv
+Parsing SystemVerilog input from `/mnt/c/Users/mohal/Downloads/synth_top.sv' to AST representation.
+Storing AST representation for module `$abstract\crossbar_mac'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\crossbar_mac'.
+Generating RTLIL representation for module `\crossbar_mac'.
+Warning: Replacing memory \partial with list of registers. See /mnt/c/Users/mohal/Downloads/synth_top.sv:54, /mnt/c/Users/mohal/Downloads/synth_top.sv:50
+
+4.1. Analyzing design hierarchy..
+Top module:  \crossbar_mac
+
+4.2. Analyzing design hierarchy..
+Top module:  \crossbar_mac
+Removing unused module `$abstract\crossbar_mac'.
+Removed 1 unused modules.
+Renaming module crossbar_mac to crossbar_mac.
+
+5. Generating Graphviz representation of design.
+Writing dot description to `/mnt/c/Users/mohal/Downloads/runs/RUN_2026-05-18_03-59-58/06-yosys-synthesis/hierarchy.dot'.
+Dumping module crossbar_mac to page 1.
+
+6. Executing TRIBUF pass.
+
+7. Executing HIERARCHY pass (managing design hierarchy).
+
+7.1. Analyzing design hierarchy..
+Top module:  \crossbar_mac
+
+7.2. Analyzing design hierarchy..
+Top module:  \crossbar_mac
+Removed 0 unused modules.
+
+8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:43$78'.
+Cleaned up 1 empty switch.
+
+9. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:59$147 in module crossbar_mac.
+Marked 2 switch rules as full_case in process $proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25 in module crossbar_mac.
+Removed a total of 0 dead cases.
+
+10. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 37 assignments to connections.
+
+11. Executing PROC_INIT pass (extract init attributes).
+
+12. Executing PROC_ARST pass (detect async resets in processes).
+
+13. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~5 debug messages>
+
+14. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:0$153'.
+Creating decoders for process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:59$147'.
+     1/10: $3\sv2v_autoblock_7.j[31:0]
+     2/10: $2\sv2v_autoblock_6.j[31:0]
+     3/10: $2\sv2v_autoblock_7.j[31:0]
+     4/10: $1\sv2v_autoblock_5.j[31:0]
+     5/10: $0\accum_out[79:0] [39:20]
+     6/10: $0\accum_out[79:0] [19:0]
+     7/10: $0\accum_out[79:0] [59:40]
+     8/10: $0\accum_out[79:0] [79:60]
+     9/10: $1\sv2v_autoblock_6.j[31:0]
+    10/10: $1\sv2v_autoblock_7.j[31:0]
+Creating decoders for process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:43$78'.
+Creating decoders for process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+     1/27: $2$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:41$24_EN[0:0]$75
+     2/27: $2$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:41$24_DATA[0:0]$74
+     3/27: $2$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:41$24_ADDR[31:0]$73
+     4/27: $1\sv2v_autoblock_1.r[31:0]
+     5/27: $1\sv2v_autoblock_1.$for_loop$1[3].sv2v_autoblock_2.c[31:0]$53
+     6/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$23_EN[0:0]$69
+     7/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$22_EN[0:0]$68
+     8/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$21_EN[0:0]$67
+     9/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$20_EN[0:0]$66
+    10/27: $1\sv2v_autoblock_1.$for_loop$1[2].sv2v_autoblock_2.c[31:0]$52
+    11/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$19_EN[0:0]$65
+    12/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$18_EN[0:0]$64
+    13/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$17_EN[0:0]$63
+    14/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$16_EN[0:0]$62
+    15/27: $1\sv2v_autoblock_1.$for_loop$1[1].sv2v_autoblock_2.c[31:0]$51
+    16/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$15_EN[0:0]$61
+    17/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$14_EN[0:0]$60
+    18/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$13_EN[0:0]$59
+    19/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$12_EN[0:0]$58
+    20/27: $1\sv2v_autoblock_1.$for_loop$1[0].sv2v_autoblock_2.c[31:0]$50
+    21/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$11_EN[0:0]$57
+    22/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$10_EN[0:0]$56
+    23/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$9_EN[0:0]$55
+    24/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$8_EN[0:0]$54
+    25/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:41$24_EN[0:0]$72
+    26/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:41$24_DATA[0:0]$71
+    27/27: $1$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:41$24_ADDR[31:0]$70
+
+15. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\crossbar_mac.\_sv2v_0' from process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:0$153'.
+No latch inferred for signal `\crossbar_mac.\sv2v_autoblock_3.j' from process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:43$78'.
+No latch inferred for signal `\crossbar_mac.\sv2v_autoblock_3.$for_loop$3[0].sv2v_autoblock_4.i' from process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:43$78'.
+No latch inferred for signal `\crossbar_mac.\sv2v_autoblock_3.$for_loop$3[1].sv2v_autoblock_4.i' from process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:43$78'.
+No latch inferred for signal `\crossbar_mac.\sv2v_autoblock_3.$for_loop$3[2].sv2v_autoblock_4.i' from process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:43$78'.
+No latch inferred for signal `\crossbar_mac.\sv2v_autoblock_3.$for_loop$3[3].sv2v_autoblock_4.i' from process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:43$78'.
+No latch inferred for signal `\crossbar_mac.\partial[0]' from process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:43$78'.
+No latch inferred for signal `\crossbar_mac.\partial[1]' from process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:43$78'.
+No latch inferred for signal `\crossbar_mac.\partial[2]' from process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:43$78'.
+No latch inferred for signal `\crossbar_mac.\partial[3]' from process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:43$78'.
+
+16. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\crossbar_mac.\accum_out' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:59$147'.
+  created $dff cell `$procdff$310' with positive edge clock.
+Creating register for signal `\crossbar_mac.\sv2v_autoblock_5.j' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:59$147'.
+  created $dff cell `$procdff$311' with positive edge clock.
+Creating register for signal `\crossbar_mac.\sv2v_autoblock_6.j' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:59$147'.
+  created $dff cell `$procdff$312' with positive edge clock.
+Creating register for signal `\crossbar_mac.\sv2v_autoblock_7.j' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:59$147'.
+  created $dff cell `$procdff$313' with positive edge clock.
+Creating register for signal `\crossbar_mac.\sv2v_autoblock_1.r' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$314' with positive edge clock.
+Creating register for signal `\crossbar_mac.\sv2v_autoblock_1.$for_loop$1[0].sv2v_autoblock_2.c' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$315' with positive edge clock.
+Creating register for signal `\crossbar_mac.\sv2v_autoblock_1.$for_loop$1[1].sv2v_autoblock_2.c' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$316' with positive edge clock.
+Creating register for signal `\crossbar_mac.\sv2v_autoblock_1.$for_loop$1[2].sv2v_autoblock_2.c' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$317' with positive edge clock.
+Creating register for signal `\crossbar_mac.\sv2v_autoblock_1.$for_loop$1[3].sv2v_autoblock_2.c' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$318' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$8_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$319' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$9_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$320' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$10_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$321' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$11_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$322' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$12_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$323' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$13_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$324' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$14_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$325' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$15_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$326' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$16_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$327' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$17_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$328' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$18_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$329' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$19_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$330' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$20_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$331' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$21_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$332' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$22_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$333' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:37$23_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$334' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:41$24_ADDR' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$335' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:41$24_DATA' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$336' with positive edge clock.
+Creating register for signal `\crossbar_mac.$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:41$24_EN' using process `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+  created $dff cell `$procdff$337' with positive edge clock.
+
+17. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+18. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:0$153'.
+Found and cleaned up 3 empty switches in `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:59$147'.
+Removing empty process `crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:59$147'.
+Removing empty process `crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:43$78'.
+Found and cleaned up 2 empty switches in `\crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+Removing empty process `crossbar_mac.$proc$/mnt/c/Users/mohal/Downloads/synth_top.sv:30$25'.
+Cleaned up 5 empty switches.
+
+19. Executing CHECK pass (checking for obvious problems).
+Checking module crossbar_mac...
+Found and reported 0 problems.
+
+20. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+<suppressed ~43 debug messages>
+
+21. Executing FLATTEN pass (flatten design).
+
+22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 44 unused cells and 183 unused wires.
+<suppressed ~53 debug messages>
+
+24. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+25. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+<suppressed ~36 debug messages>
+Removed a total of 12 cells.
+
+26. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \crossbar_mac..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$224.
+    dead port 2/2 on $mux $procmux$230.
+    dead port 2/2 on $mux $procmux$236.
+Removed 3 multiplexer ports.
+<suppressed ~39 debug messages>
+
+27. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \crossbar_mac.
+Performed a total of 0 changes.
+
+28. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+<suppressed ~45 debug messages>
+Removed a total of 15 cells.
+
+29. Executing OPT_DFF pass (perform DFF optimizations).
+
+30. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 0 unused cells and 30 unused wires.
+<suppressed ~1 debug messages>
+
+31. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+32. Rerunning OPT passes. (Maybe there is more to do…)
+
+33. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \crossbar_mac..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+34. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \crossbar_mac.
+Performed a total of 0 changes.
+
+35. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+36. Executing OPT_DFF pass (perform DFF optimizations).
+
+37. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+
+38. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+39. Executing FSM pass (extract and optimize FSM).
+
+39.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+39.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+39.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+39.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+
+39.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+39.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+39.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+39.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+40. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+41. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+42. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \crossbar_mac..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+43. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \crossbar_mac.
+Performed a total of 0 changes.
+
+44. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+45. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$310 ($dff) from module crossbar_mac (D = { $procmux$206_Y $procmux$197_Y $procmux$179_Y $procmux$188_Y }, Q = \accum_out, rval = 80'00000000000000000000000000000000000000000000000000000000000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$355 ($sdff) from module crossbar_mac (D = { $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$149_Y $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$150_Y $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$151_Y $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$152_Y }, Q = \accum_out).
+
+46. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 12 unused cells and 9 unused wires.
+<suppressed ~13 debug messages>
+
+47. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+48. Rerunning OPT passes. (Maybe there is more to do…)
+
+49. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \crossbar_mac..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+50. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \crossbar_mac.
+Performed a total of 0 changes.
+
+51. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+52. Executing OPT_DFF pass (perform DFF optimizations).
+
+53. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+
+54. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+55. Executing WREDUCE pass (reducing word size of cells).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$338 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$339 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$340 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$341 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$342 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$343 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$344 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$345 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$346 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$347 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$348 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$349 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$350 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$351 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$352 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$353 (weight_mem).
+Removed top 28 address bits (of 32) from memory init port crossbar_mac.$auto$proc_memwr.cc:45:proc_memwr$354 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$103 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$107 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$111 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$115 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$119 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$123 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$127 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$131 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$135 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$139 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$143 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$83 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$87 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$91 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$95 (weight_mem).
+Removed top 28 address bits (of 32) from memory read port crossbar_mac.$memrd$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$99 (weight_mem).
+Removed top 28 bits (of 32) from port A of cell crossbar_mac.$add$/mnt/c/Users/mohal/Downloads/synth_top.sv:0$77 ($add).
+Removed top 27 bits (of 32) from port Y of cell crossbar_mac.$add$/mnt/c/Users/mohal/Downloads/synth_top.sv:0$77 ($add).
+Removed top 28 bits (of 32) from mux cell crossbar_mac.$procmux$308 ($mux).
+Removed top 28 bits (of 32) from mux cell crossbar_mac.$procmux$233 ($mux).
+Removed top 1 bits (of 5) from port Y of cell crossbar_mac.$add$/mnt/c/Users/mohal/Downloads/synth_top.sv:0$77 ($add).
+Removed top 28 bits (of 32) from wire crossbar_mac.$0$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:41$24_ADDR[31:0]$46.
+Removed top 28 bits (of 32) from wire crossbar_mac.$2$memwr$\weight_mem$/mnt/c/Users/mohal/Downloads/synth_top.sv:41$24_ADDR[31:0]$73.
+Removed top 28 bits (of 32) from wire crossbar_mac.$add$/mnt/c/Users/mohal/Downloads/synth_top.sv:0$77_Y.
+
+56. Executing PEEPOPT pass (run peephole optimizers).
+
+57. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+58. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module crossbar_mac:
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:0$77 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$106 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$110 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$114 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$122 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$126 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$130 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$138 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$142 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$146 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$90 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$94 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$98 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$149 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$150 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$151 ($add).
+  creating $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$152 ($add).
+  creating $macc model for $neg$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$100 ($neg).
+  creating $macc model for $neg$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$104 ($neg).
+  creating $macc model for $neg$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$108 ($neg).
+  creating $macc model for $neg$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$112 ($neg).
+  merging $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$94 into $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$98.
+  merging $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$90 into $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$98.
+  merging $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$142 into $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$146.
+  merging $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$138 into $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$146.
+  merging $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$126 into $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$130.
+  merging $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$122 into $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$130.
+  merging $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$110 into $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$114.
+  merging $macc model for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$106 into $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$114.
+  creating $alu model for $macc $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$149.
+  creating $alu model for $macc $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$150.
+  creating $alu model for $macc $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$151.
+  creating $alu model for $macc $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$152.
+  creating $alu model for $macc $neg$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$100.
+  creating $alu model for $macc $neg$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$104.
+  creating $alu model for $macc $neg$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$108.
+  creating $alu model for $macc $neg$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$112.
+  creating $alu model for $macc $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:0$77.
+  creating $macc cell for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$114: $auto$alumacc.cc:365:replace_macc$364
+  creating $macc cell for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$130: $auto$alumacc.cc:365:replace_macc$365
+  creating $macc cell for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$146: $auto$alumacc.cc:365:replace_macc$366
+  creating $macc cell for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$98: $auto$alumacc.cc:365:replace_macc$367
+  creating $alu cell for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:0$77: $auto$alumacc.cc:485:replace_alu$368
+  creating $alu cell for $neg$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$112: $auto$alumacc.cc:485:replace_alu$371
+  creating $alu cell for $neg$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$108: $auto$alumacc.cc:485:replace_alu$374
+  creating $alu cell for $neg$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$104: $auto$alumacc.cc:485:replace_alu$377
+  creating $alu cell for $neg$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$100: $auto$alumacc.cc:485:replace_alu$380
+  creating $alu cell for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$152: $auto$alumacc.cc:485:replace_alu$383
+  creating $alu cell for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$151: $auto$alumacc.cc:485:replace_alu$386
+  creating $alu cell for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$150: $auto$alumacc.cc:485:replace_alu$389
+  creating $alu cell for $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:73$149: $auto$alumacc.cc:485:replace_alu$392
+  created 9 $alu and 4 $macc cells.
+
+59. Executing SHARE pass (SAT-based resource sharing).
+
+60. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+61. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+62. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \crossbar_mac..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+63. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \crossbar_mac.
+Performed a total of 0 changes.
+
+64. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+65. Executing OPT_DFF pass (perform DFF optimizations).
+
+66. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 8 unused cells and 8 unused wires.
+<suppressed ~9 debug messages>
+
+67. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+68. Rerunning OPT passes. (Maybe there is more to do…)
+
+69. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \crossbar_mac..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+70. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \crossbar_mac.
+Performed a total of 0 changes.
+
+71. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+72. Executing OPT_DFF pass (perform DFF optimizations).
+
+73. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+
+74. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+75. Executing MEMORY pass.
+
+75.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+75.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 120 transformations.
+
+75.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+  Analyzing crossbar_mac.weight_mem write port 0.
+  Analyzing crossbar_mac.weight_mem write port 1.
+  Analyzing crossbar_mac.weight_mem write port 2.
+  Analyzing crossbar_mac.weight_mem write port 3.
+  Analyzing crossbar_mac.weight_mem write port 4.
+  Analyzing crossbar_mac.weight_mem write port 5.
+  Analyzing crossbar_mac.weight_mem write port 6.
+  Analyzing crossbar_mac.weight_mem write port 7.
+  Analyzing crossbar_mac.weight_mem write port 8.
+  Analyzing crossbar_mac.weight_mem write port 9.
+  Analyzing crossbar_mac.weight_mem write port 10.
+  Analyzing crossbar_mac.weight_mem write port 11.
+  Analyzing crossbar_mac.weight_mem write port 12.
+  Analyzing crossbar_mac.weight_mem write port 13.
+  Analyzing crossbar_mac.weight_mem write port 14.
+  Analyzing crossbar_mac.weight_mem write port 15.
+  Analyzing crossbar_mac.weight_mem write port 16.
+
+75.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+75.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\weight_mem'[0] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[1] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[2] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[3] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[4] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[5] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[6] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[7] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[8] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[9] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[10] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[11] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[12] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[13] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[14] in module `\crossbar_mac': no output FF found.
+Checking read port `\weight_mem'[15] in module `\crossbar_mac': no output FF found.
+Checking read port address `\weight_mem'[0] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[1] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[2] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[3] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[4] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[5] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[6] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[7] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[8] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[9] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[10] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[11] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[12] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[13] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[14] in module `\crossbar_mac': no address FF found.
+Checking read port address `\weight_mem'[15] in module `\crossbar_mac': no address FF found.
+
+75.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+
+75.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+Consolidating read ports of memory crossbar_mac.weight_mem by address:
+  Merging ports 0, 4 (address 4'0001).
+  Merging ports 0, 8 (address 4'0000).
+  Merging ports 0, 11 (address 4'0000).
+  Merging ports 0, 12 (address 4'0000).
+  Merging ports 0, 13 (address 4'0000).
+  Merging ports 2, 14 (address 4'1000).
+  Merging ports 3, 15 (address 4'0100).
+  Merging ports 5, 9 (address 4'1111).
+  Merging ports 6, 10 (address 4'1011).
+Consolidating read ports of memory crossbar_mac.weight_mem by address:
+  Merging ports 1, 4 (address 4'1100).
+  Merging ports 1, 5 (address 4'1100).
+  Merging ports 1, 6 (address 4'1000).
+Consolidating read ports of memory crossbar_mac.weight_mem by address:
+Consolidating write ports of memory crossbar_mac.weight_mem by address:
+  Merging ports 0, 1 (address 4'0000).
+  Merging ports 0, 2 (address 4'0000).
+  Merging ports 0, 3 (address 4'0000).
+  Merging ports 0, 4 (address 4'0000).
+  Merging ports 0, 5 (address 4'0000).
+  Merging ports 0, 6 (address 4'0000).
+  Merging ports 0, 7 (address 4'0000).
+  Merging ports 0, 8 (address 4'0000).
+  Merging ports 10, 11 (address 4'1010).
+  Merging ports 12, 13 (address 4'1100).
+  Merging ports 12, 14 (address 4'1100).
+  Merging ports 12, 15 (address 4'1100).
+Consolidating write ports of memory crossbar_mac.weight_mem by address:
+  Merging ports 1, 2 (address 4'1001).
+  Merging ports 1, 3 (address 4'1000).
+Consolidating write ports of memory crossbar_mac.weight_mem by address:
+Consolidating write ports of memory crossbar_mac.weight_mem using sat-based resource sharing:
+
+75.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+75.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 0 unused cells and 17 unused wires.
+<suppressed ~1 debug messages>
+
+75.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+76. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+
+77. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+<suppressed ~9 debug messages>
+
+78. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+79. Executing OPT_DFF pass (perform DFF optimizations).
+
+80. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 0 unused cells and 9 unused wires.
+<suppressed ~2 debug messages>
+
+81. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \weight_mem in module \crossbar_mac:
+  created 16 $dff cells and 0 static cells of width 1.
+  read interface: 0 $dff and 14 $mux cells.
+  write interface: 48 write mux blocks.
+
+82. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+<suppressed ~89 debug messages>
+
+83. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+84. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \crossbar_mac..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~32 debug messages>
+
+85. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \crossbar_mac.
+Performed a total of 0 changes.
+
+86. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+87. Executing OPT_SHARE pass.
+
+88. Executing OPT_DFF pass (perform DFF optimizations).
+
+89. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 0 unused cells and 110 unused wires.
+<suppressed ~1 debug messages>
+
+90. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+91. Rerunning OPT passes. (Maybe there is more to do…)
+
+92. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \crossbar_mac..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~32 debug messages>
+
+93. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \crossbar_mac.
+Performed a total of 0 changes.
+
+94. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+95. Executing OPT_SHARE pass.
+
+96. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $memory\weight_mem[9]$457 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[9][2][0]$y$688, Q = \weight_mem[9]).
+Adding EN signal on $memory\weight_mem[8]$455 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[8][2][0]$y$674, Q = \weight_mem[8]).
+Adding EN signal on $memory\weight_mem[7]$453 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[7][2][0]$y$654, Q = \weight_mem[7]).
+Adding EN signal on $memory\weight_mem[6]$451 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[6][2][0]$y$640, Q = \weight_mem[6]).
+Adding EN signal on $memory\weight_mem[5]$449 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[5][2][0]$y$626, Q = \weight_mem[5]).
+Adding EN signal on $memory\weight_mem[4]$447 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[4][2][0]$y$612, Q = \weight_mem[4]).
+Adding EN signal on $memory\weight_mem[3]$445 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[3][2][0]$y$594, Q = \weight_mem[3]).
+Adding EN signal on $memory\weight_mem[2]$443 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[2][2][0]$y$578, Q = \weight_mem[2]).
+Adding EN signal on $memory\weight_mem[1]$441 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[1][2][0]$y$560, Q = \weight_mem[1]).
+Adding EN signal on $memory\weight_mem[15]$469 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[15][2][0]$y$774, Q = \weight_mem[15]).
+Adding EN signal on $memory\weight_mem[14]$467 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[14][2][0]$y$760, Q = \weight_mem[14]).
+Adding EN signal on $memory\weight_mem[13]$465 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[13][2][0]$y$746, Q = \weight_mem[13]).
+Adding EN signal on $memory\weight_mem[12]$463 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[12][2][0]$y$732, Q = \weight_mem[12]).
+Adding EN signal on $memory\weight_mem[11]$461 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[11][2][0]$y$716, Q = \weight_mem[11]).
+Adding EN signal on $memory\weight_mem[10]$459 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[10][2][0]$y$702, Q = \weight_mem[10]).
+Adding EN signal on $memory\weight_mem[0]$439 ($dff) from module crossbar_mac (D = $memory\weight_mem$wrmux[0][2][0]$y$542, Q = \weight_mem[0]).
+
+97. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+
+98. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+<suppressed ~16 debug messages>
+
+99. Rerunning OPT passes. (Maybe there is more to do…)
+
+100. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \crossbar_mac..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~32 debug messages>
+
+101. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \crossbar_mac.
+Performed a total of 0 changes.
+
+102. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+103. Executing OPT_SHARE pass.
+
+104. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $auto$ff.cc:266:slice$775 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[9], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$778 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[8], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$781 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[7], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$820 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[0], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$817 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[10], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$814 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[11], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$811 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[12], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$808 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[13], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$805 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[14], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$802 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[15], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$799 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[1], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$796 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[2], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$793 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[3], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$790 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[4], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$787 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[5], rval = 1'1).
+Adding SRST signal on $auto$ff.cc:266:slice$784 ($dffe) from module crossbar_mac (D = \weight_val, Q = \weight_mem[6], rval = 1'1).
+
+105. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 16 unused cells and 32 unused wires.
+<suppressed ~17 debug messages>
+
+106. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+107. Rerunning OPT passes. (Maybe there is more to do…)
+
+108. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \crossbar_mac..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~16 debug messages>
+
+109. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \crossbar_mac.
+Performed a total of 0 changes.
+
+110. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+111. Executing OPT_SHARE pass.
+
+112. Executing OPT_DFF pass (perform DFF optimizations).
+
+113. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+
+114. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+115. Executing TECHMAP pass (map to technology primitives).
+
+115.1. Executing Verilog-2005 frontend: /nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+115.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $sdffce.
+Using template $paramod$b88c814db3182f0c444e9827cc183ec51bbd865d\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $mux.
+Using template $paramod$6fc37af1c109ae54e8aed83fcd995c12d378ce93\_90_alu for cells of type $alu.
+Using extmapper maccmap for cells of type $macc.
+  add $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$118_Y (11 bits, unsigned)
+  add $ternary$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$129_Y (11 bits, unsigned)
+  add $ternary$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$125_Y (11 bits, unsigned)
+  add $ternary$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$121_Y (11 bits, unsigned)
+  add $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$134_Y (11 bits, unsigned)
+  add $ternary$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$145_Y (11 bits, unsigned)
+  add $ternary$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$141_Y (11 bits, unsigned)
+  add $ternary$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$137_Y (11 bits, unsigned)
+  add $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$86_Y (11 bits, unsigned)
+  add $ternary$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$97_Y (11 bits, unsigned)
+  add $ternary$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$93_Y (11 bits, unsigned)
+  add $ternary$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$89_Y (11 bits, unsigned)
+  add $add$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$102_Y (11 bits, unsigned)
+  add $ternary$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$113_Y (11 bits, unsigned)
+  add $ternary$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$109_Y (11 bits, unsigned)
+  add $ternary$/mnt/c/Users/mohal/Downloads/synth_top.sv:54$105_Y (11 bits, unsigned)
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001011 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010100 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001011 for cells of type $fa.
+Using template $paramod$ec32b97001540459632a2df9accd677d3703ea0f\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~1262 debug messages>
+
+116. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+<suppressed ~472 debug messages>
+
+117. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+<suppressed ~273 debug messages>
+Removed a total of 91 cells.
+
+118. Executing OPT_DFF pass (perform DFF optimizations).
+
+119. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 154 unused cells and 557 unused wires.
+<suppressed ~155 debug messages>
+
+120. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+<suppressed ~4 debug messages>
+
+121. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+<suppressed ~96 debug messages>
+Removed a total of 32 cells.
+
+122. Executing OPT_DFF pass (perform DFF optimizations).
+
+123. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+124. Executing ABC pass (technology mapping using ABC).
+
+124.1. Extracting gate netlist of module `\crossbar_mac' to `<abc-temp-dir>/input.blif'..
+Extracted 1454 gates and 1589 wires to a netlist network with 135 inputs and 113 outputs.
+
+124.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+124.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        5
+ABC RESULTS:               MUX cells:      144
+ABC RESULTS:               NOT cells:       49
+ABC RESULTS:              NAND cells:       15
+ABC RESULTS:                OR cells:      234
+ABC RESULTS:             ORNOT cells:       71
+ABC RESULTS:               NOR cells:      108
+ABC RESULTS:            ANDNOT cells:      417
+ABC RESULTS:               XOR cells:      374
+ABC RESULTS:              XNOR cells:       45
+ABC RESULTS:        internal signals:     1341
+ABC RESULTS:           input signals:      135
+ABC RESULTS:          output signals:      113
+Removing temp directory.
+
+125. Executing OPT pass (performing simple optimizations).
+
+125.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+125.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+125.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+125.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 0 unused cells and 694 unused wires.
+<suppressed ~5 debug messages>
+
+125.5. Finished fast OPT passes.
+
+126. Executing HIERARCHY pass (managing design hierarchy).
+
+126.1. Analyzing design hierarchy..
+Top module:  \crossbar_mac
+
+126.2. Analyzing design hierarchy..
+Top module:  \crossbar_mac
+Removed 0 unused modules.
+
+127. Executing CHECK pass (checking for obvious problems).
+Checking module crossbar_mac...
+Found and reported 0 problems.
+
+128. Printing statistics.
+
+=== crossbar_mac ===
+
+   Number of wires:               1418
+   Number of wire bits:           1713
+   Number of public wires:          28
+   Number of public wire bits:     171
+   Number of ports:                 10
+   Number of port bits:            122
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1558
+     $_ANDNOT_                     417
+     $_AND_                          5
+     $_MUX_                        144
+     $_NAND_                        15
+     $_NOR_                        108
+     $_NOT_                         49
+     $_ORNOT_                       71
+     $_OR_                         234
+     $_SDFFCE_PN1P_                 16
+     $_SDFFE_PP0P_                  80
+     $_XNOR_                        45
+     $_XOR_                        374
+
+129. Generating Graphviz representation of design.
+Writing dot description to `/mnt/c/Users/mohal/Downloads/runs/RUN_2026-05-18_03-59-58/06-yosys-synthesis/primitive_techmap.dot'.
+Dumping module crossbar_mac to page 1.
+
+130. Executing OPT pass (performing simple optimizations).
+
+130.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+130.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+130.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \crossbar_mac..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+130.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \crossbar_mac.
+Performed a total of 0 changes.
+
+130.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\crossbar_mac'.
+Removed a total of 0 cells.
+
+130.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+130.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+
+130.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module crossbar_mac.
+
+130.9. Finished OPT passes. (There is nothing left to do.)
+
+131. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~2 debug messages>
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /mnt/c/Users/mohal/Downloads/runs/RUN_2026-05-18_03-59-58/tmp/3480f3d678f0461d92899a8be9419cc1.lib ",
+   "modules": {
+      "\\crossbar_mac": {
+         "num_wires":         1416,
+         "num_wire_bits":     1680,
+         "num_pub_wires":     26,
+         "num_pub_wire_bits": 138,
+         "num_ports":         10,
+         "num_port_bits":     122,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1558,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 417,
+            "$_AND_": 5,
+            "$_MUX_": 144,
+            "$_NAND_": 15,
+            "$_NOR_": 108,
+            "$_NOT_": 49,
+            "$_ORNOT_": 71,
+            "$_OR_": 234,
+            "$_SDFFCE_PN1P_": 16,
+            "$_SDFFE_PP0P_": 80,
+            "$_XNOR_": 45,
+            "$_XOR_": 374
+         }
+      }
+   },
+      "design": {
+         "num_wires":         1416,
+         "num_wire_bits":     1680,
+         "num_pub_wires":     26,
+         "num_pub_wire_bits": 138,
+         "num_ports":         10,
+         "num_port_bits":     122,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1558,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 417,
+            "$_AND_": 5,
+            "$_MUX_": 144,
+            "$_NAND_": 15,
+            "$_NOR_": 108,
+            "$_NOT_": 49,
+            "$_ORNOT_": 71,
+            "$_OR_": 234,
+            "$_SDFFCE_PN1P_": 16,
+            "$_SDFFE_PP0P_": 80,
+            "$_XNOR_": 45,
+            "$_XOR_": 374
+         }
+      }
+}
+
+132. Printing statistics.
+
+=== crossbar_mac ===
+
+   Number of wires:               1416
+   Number of wire bits:           1680
+   Number of public wires:          26
+   Number of public wire bits:     138
+   Number of ports:                 10
+   Number of port bits:            122
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1558
+     $_ANDNOT_                     417
+     $_AND_                          5
+     $_MUX_                        144
+     $_NAND_                        15
+     $_NOR_                        108
+     $_NOT_                         49
+     $_ORNOT_                       71
+     $_OR_                         234
+     $_SDFFCE_PN1P_                 16
+     $_SDFFE_PP0P_                  80
+     $_XNOR_                        45
+     $_XOR_                        374
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_SDFFE_PP0P_ is unknown!
+   Area for cell type $_SDFFCE_PN1P_ is unknown!
+
+[INFO] Applying tri-state buffer mapping from '/home/mohal/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v'…
+
+133. Executing TECHMAP pass (map to technology primitives).
+
+133.1. Executing Verilog-2005 frontend: /home/mohal/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/mohal/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+133.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+134. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/home/mohal/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v'…
+
+135. Executing TECHMAP pass (map to technology primitives).
+
+135.1. Executing Verilog-2005 frontend: /home/mohal/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/mohal/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+135.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+136. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+137. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+137.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\crossbar_mac':
+  mapped 96 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_2 cells.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /mnt/c/Users/mohal/Downloads/runs/RUN_2026-05-18_03-59-58/tmp/3480f3d678f0461d92899a8be9419cc1.lib ",
+   "modules": {
+      "\\crossbar_mac": {
+         "num_wires":         1608,
+         "num_wire_bits":     1872,
+         "num_pub_wires":     26,
+         "num_pub_wire_bits": 138,
+         "num_ports":         10,
+         "num_port_bits":     122,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1750,
+         "area":              2041.958400,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 417,
+            "$_AND_": 5,
+            "$_MUX_": 336,
+            "$_NAND_": 15,
+            "$_NOR_": 108,
+            "$_NOT_": 49,
+            "$_ORNOT_": 71,
+            "$_OR_": 234,
+            "$_XNOR_": 45,
+            "$_XOR_": 374,
+            "sky130_fd_sc_hd__dfxtp_2": 96
+         }
+      }
+   },
+      "design": {
+         "num_wires":         1608,
+         "num_wire_bits":     1872,
+         "num_pub_wires":     26,
+         "num_pub_wire_bits": 138,
+         "num_ports":         10,
+         "num_port_bits":     122,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1750,
+         "area":              2041.958400,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 417,
+            "$_AND_": 5,
+            "$_MUX_": 336,
+            "$_NAND_": 15,
+            "$_NOR_": 108,
+            "$_NOT_": 49,
+            "$_ORNOT_": 71,
+            "$_OR_": 234,
+            "$_XNOR_": 45,
+            "$_XOR_": 374,
+            "sky130_fd_sc_hd__dfxtp_2": 96
+         }
+      }
+}
+
+138. Printing statistics.
+
+=== crossbar_mac ===
+
+   Number of wires:               1608
+   Number of wire bits:           1872
+   Number of public wires:          26
+   Number of public wire bits:     138
+   Number of ports:                 10
+   Number of port bits:            122
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1750
+     $_ANDNOT_                     417
+     $_AND_                          5
+     $_MUX_                        336
+     $_NAND_                        15
+     $_NOR_                        108
+     $_NOT_                         49
+     $_ORNOT_                       71
+     $_OR_                         234
+     $_XNOR_                        45
+     $_XOR_                        374
+     sky130_fd_sc_hd__dfxtp_2       96
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+
+   Chip area for module '\crossbar_mac': 2041.958400
+     of which used for sequential elements: 2041.958400 (100.00%)
+
+[INFO] Using generated ABC script '/mnt/c/Users/mohal/Downloads/runs/RUN_2026-05-18_03-59-58/06-yosys-synthesis/AREA_0.abc'…
+
+139. Executing ABC pass (technology mapping using ABC).
+
+139.1. Extracting gate netlist of module `\crossbar_mac' to `/tmp/yosys-abc-cwXJdr/input.blif'..
+Extracted 1654 gates and 1793 wires to a netlist network with 137 inputs and 96 outputs.
+
+139.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-cwXJdr/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-cwXJdr/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-cwXJdr/input.blif 
+ABC: + read_lib -w /mnt/c/Users/mohal/Downloads/runs/RUN_2026-05-18_03-59-58/tmp/3480f3d678f0461d92899a8be9419cc1.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.07 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/mnt/c/Users/mohal/Downloads/runs/RUN_2026-05-18_03-59-58/tmp/3480f3d678f0461d92899a8be9419cc1.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.09 sec
+ABC: Memory =    9.54 MB. Time =     0.09 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /mnt/c/Users/mohal/Downloads/runs/RUN_2026-05-18_03-59-58/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2/Y".
+ABC: Setting output load to be 33.442001.
+ABC: + source /mnt/c/Users/mohal/Downloads/runs/RUN_2026-05-18_03-59-58/06-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_2/Y) in the library.
+ABC: WireLoad = "none"  Gates =   1326 (  2.3 %)   Cap = 10.8 ff (  4.0 %)   Area =    13145.11 ( 86.7 %)   Delay =  6799.99 ps  (  2.0 %)               
+ABC: Path  0 --      90 : 0   10 pi                        A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  31.8 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     359 : 4    6 sky130_fd_sc_hd__or4_2    A =   8.76  Df = 735.8 -584.4 ps  S = 159.9 ps  Cin =  1.5 ff  Cout =  20.6 ff  Cmax = 310.4 ff  G = 1293  
+ABC: Path  2 --     503 : 4    4 sky130_fd_sc_hd__or4_2    A =   8.76  Df =1428.2-1114.7 ps  S = 137.2 ps  Cin =  1.5 ff  Cout =  12.1 ff  Cmax = 310.4 ff  G =  769  
+ABC: Path  3 --    1403 : 4    1 sky130_fd_sc_hd__a31o_2   A =   8.76  Df =1724.0 -244.4 ps  S =  74.8 ps  Cin =  2.4 ff  Cout =   9.0 ff  Cmax = 271.9 ff  G =  368  
+ABC: Path  4 --    1406 : 2    2 sky130_fd_sc_hd__xnor2_2  A =  16.27  Df =1921.3 -280.9 ps  S = 183.2 ps  Cin =  8.5 ff  Cout =  10.0 ff  Cmax = 121.8 ff  G =  114  
+ABC: Path  5 --    1408 : 2    2 sky130_fd_sc_hd__xnor2_2  A =  16.27  Df =2120.2  -55.6 ps  S = 190.4 ps  Cin =  8.5 ff  Cout =  10.6 ff  Cmax = 121.8 ff  G =  120  
+ABC: Path  6 --    1411 : 2    2 sky130_fd_sc_hd__xnor2_2  A =  16.27  Df =2335.3  -58.7 ps  S = 195.6 ps  Cin =  8.5 ff  Cout =  11.1 ff  Cmax = 121.8 ff  G =  124  
+ABC: Path  7 --    1412 : 2    3 sky130_fd_sc_hd__xor2_2   A =  16.27  Df =2511.3  -83.9 ps  S = 110.4 ps  Cin =  8.6 ff  Cout =   4.4 ff  Cmax = 130.0 ff  G =   49  
+ABC: Path  8 --    1414 : 3    2 sky130_fd_sc_hd__o21ba_2  A =  10.01  Df =2681.8  -27.5 ps  S =  42.7 ps  Cin =  2.1 ff  Cout =   4.1 ff  Cmax = 264.6 ff  G =  185  
+ABC: Path  9 --    1443 : 2    1 sky130_fd_sc_hd__or2_2    A =   6.26  Df =2942.7 -196.8 ps  S =  52.7 ps  Cin =  1.5 ff  Cout =   2.6 ff  Cmax = 299.4 ff  G =  169  
+ABC: Path 10 --    1444 : 5    3 sky130_fd_sc_hd__a2111o_2 A =  12.51  Df =3364.6 -512.5 ps  S =  80.6 ps  Cin =  2.4 ff  Cout =   9.2 ff  Cmax = 324.1 ff  G =  361  
+ABC: Path 11 --    1455 : 4    2 sky130_fd_sc_hd__a31o_2   A =   8.76  Df =3651.5 -602.0 ps  S =  97.4 ps  Cin =  2.4 ff  Cout =  14.1 ff  Cmax = 271.9 ff  G =  573  
+ABC: Path 12 --    1472 : 3   19 sky130_fd_sc_hd__o21ai_2  A =   8.76  Df =4429.9-1100.6 ps  S = 983.1 ps  Cin =  4.5 ff  Cout =  90.6 ff  Cmax = 139.2 ff  G = 1913  
+ABC: Path 13 --    1498 : 2    3 sky130_fd_sc_hd__xor2_2   A =  16.27  Df =4901.2-1305.5 ps  S = 274.6 ps  Cin =  8.6 ff  Cout =  13.0 ff  Cmax = 130.0 ff  G =  146  
+ABC: Path 14 --    1516 : 4    2 sky130_fd_sc_hd__and4_2   A =  10.01  Df =5164.4 -164.8 ps  S =  53.5 ps  Cin =  1.5 ff  Cout =   3.1 ff  Cmax = 300.3 ff  G =  196  
+ABC: Path 15 --    1518 : 4    1 sky130_fd_sc_hd__or4bb_2  A =  12.51  Df =5747.5 -579.2 ps  S =  85.7 ps  Cin =  1.5 ff  Cout =   1.6 ff  Cmax = 312.2 ff  G =  101  
+ABC: Path 16 --    1520 : 3    3 sky130_fd_sc_hd__or3b_2   A =   8.76  Df =6012.0 -312.7 ps  S = 125.1 ps  Cin =  1.5 ff  Cout =  18.5 ff  Cmax = 269.2 ff  G = 1185  
+ABC: Path 17 --    1536 : 4    2 sky130_fd_sc_hd__a31oi_2  A =  12.51  Df =6141.0 -207.5 ps  S = 240.2 ps  Cin =  4.4 ff  Cout =  13.2 ff  Cmax = 118.1 ff  G =  286  
+ABC: Path 18 --    1540 : 3    1 sky130_fd_sc_hd__o21ai_2  A =   8.76  Df =6315.7 -285.1 ps  S = 148.7 ps  Cin =  4.5 ff  Cout =   9.0 ff  Cmax = 139.2 ff  G =  190  
+ABC: Path 19 --    1542 : 2    1 sky130_fd_sc_hd__xnor2_2  A =  16.27  Df =6481.3 -312.1 ps  S = 101.1 ps  Cin =  8.5 ff  Cout =   2.5 ff  Cmax = 121.8 ff  G =   27  
+ABC: Path 20 --    1544 : 4    1 sky130_fd_sc_hd__o211a_2  A =  10.01  Df =6800.0 -331.2 ps  S = 209.2 ps  Cin =  2.4 ff  Cout =  33.4 ff  Cmax = 268.3 ff  G = 1415  
+ABC: Start-point = pi89 (\data_in [25]).  End-point = po90 ($auto$rtlil.cc:2739:MuxGate$5341).
+ABC: netlist                       : i/o =  137/   96  lat =    0  nd =  1326  edge =   3367  area =13148.20  delay =21.00  lev = 21
+ABC: + write_blif /tmp/yosys-abc-cwXJdr/output.blif 
+
+139.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__nand4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21bo_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor4_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand3_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o41ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a221oi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand3b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and4b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o32a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__a211o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor3_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__a41o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a311o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a32o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o221a_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2o_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__o31a_2 cells:       40
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_2 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a2111o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:       29
+ABC RESULTS:   sky130_fd_sc_hd__a221o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o311a_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:       12
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:       31
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:       47
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4bb_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o41a_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:       77
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:       79
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:       61
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:       33
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:      121
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:       42
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:      153
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:      115
+ABC RESULTS:   sky130_fd_sc_hd__o211a_2 cells:       64
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:       17
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:       20
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_2 cells:       53
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:      130
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:       92
+ABC RESULTS:        internal signals:     1560
+ABC RESULTS:           input signals:      137
+ABC RESULTS:          output signals:       96
+Removing temp directory.
+
+140. Executing SETUNDEF pass (replace undef values with defined constants).
+
+141. Executing HILOMAP pass (mapping to constant drivers).
+
+142. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+143. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \crossbar_mac..
+Removed 0 unused cells and 1871 unused wires.
+<suppressed ~1 debug messages>
+
+144. Executing INSBUF pass (insert buffer cells for connected wires).
+
+145. Executing CHECK pass (checking for obvious problems).
+Checking module crossbar_mac...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /mnt/c/Users/mohal/Downloads/runs/RUN_2026-05-18_03-59-58/tmp/3480f3d678f0461d92899a8be9419cc1.lib ",
+   "modules": {
+      "\\crossbar_mac": {
+         "num_wires":         1352,
+         "num_wire_bits":     1464,
+         "num_pub_wires":     26,
+         "num_pub_wire_bits": 138,
+         "num_ports":         10,
+         "num_port_bits":     122,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1422,
+         "area":              15187.065600,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a2111o_2": 1,
+            "sky130_fd_sc_hd__a211o_2": 2,
+            "sky130_fd_sc_hd__a211oi_2": 2,
+            "sky130_fd_sc_hd__a21bo_2": 2,
+            "sky130_fd_sc_hd__a21boi_2": 4,
+            "sky130_fd_sc_hd__a21o_2": 47,
+            "sky130_fd_sc_hd__a21oi_2": 61,
+            "sky130_fd_sc_hd__a221o_2": 1,
+            "sky130_fd_sc_hd__a221oi_2": 1,
+            "sky130_fd_sc_hd__a22o_2": 1,
+            "sky130_fd_sc_hd__a2bb2o_2": 6,
+            "sky130_fd_sc_hd__a311o_2": 1,
+            "sky130_fd_sc_hd__a31o_2": 12,
+            "sky130_fd_sc_hd__a31oi_2": 2,
+            "sky130_fd_sc_hd__a32o_2": 2,
+            "sky130_fd_sc_hd__a41o_2": 2,
+            "sky130_fd_sc_hd__and2_2": 77,
+            "sky130_fd_sc_hd__and2b_2": 29,
+            "sky130_fd_sc_hd__and3_2": 20,
+            "sky130_fd_sc_hd__and3b_2": 3,
+            "sky130_fd_sc_hd__and4_2": 1,
+            "sky130_fd_sc_hd__and4b_2": 2,
+            "sky130_fd_sc_hd__dfxtp_2": 96,
+            "sky130_fd_sc_hd__inv_2": 31,
+            "sky130_fd_sc_hd__mux2_1": 92,
+            "sky130_fd_sc_hd__nand2_2": 130,
+            "sky130_fd_sc_hd__nand2b_2": 53,
+            "sky130_fd_sc_hd__nand3_2": 2,
+            "sky130_fd_sc_hd__nand3b_2": 2,
+            "sky130_fd_sc_hd__nand4_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 79,
+            "sky130_fd_sc_hd__nor3_2": 6,
+            "sky130_fd_sc_hd__nor3b_2": 1,
+            "sky130_fd_sc_hd__nor4_2": 3,
+            "sky130_fd_sc_hd__o211a_2": 64,
+            "sky130_fd_sc_hd__o211ai_2": 4,
+            "sky130_fd_sc_hd__o21a_2": 33,
+            "sky130_fd_sc_hd__o21ai_2": 42,
+            "sky130_fd_sc_hd__o21ba_2": 9,
+            "sky130_fd_sc_hd__o21bai_2": 2,
+            "sky130_fd_sc_hd__o221a_2": 3,
+            "sky130_fd_sc_hd__o22a_2": 2,
+            "sky130_fd_sc_hd__o22ai_2": 1,
+            "sky130_fd_sc_hd__o311a_2": 10,
+            "sky130_fd_sc_hd__o31a_2": 40,
+            "sky130_fd_sc_hd__o31ai_2": 1,
+            "sky130_fd_sc_hd__o32a_2": 2,
+            "sky130_fd_sc_hd__o41a_2": 4,
+            "sky130_fd_sc_hd__o41ai_2": 1,
+            "sky130_fd_sc_hd__or2_2": 115,
+            "sky130_fd_sc_hd__or3_2": 15,
+            "sky130_fd_sc_hd__or3b_2": 17,
+            "sky130_fd_sc_hd__or4_2": 7,
+            "sky130_fd_sc_hd__or4bb_2": 1,
+            "sky130_fd_sc_hd__xnor2_2": 153,
+            "sky130_fd_sc_hd__xor2_2": 121
+         }
+      }
+   },
+      "design": {
+         "num_wires":         1352,
+         "num_wire_bits":     1464,
+         "num_pub_wires":     26,
+         "num_pub_wire_bits": 138,
+         "num_ports":         10,
+         "num_port_bits":     122,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         1422,
+         "area":              15187.065600,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a2111o_2": 1,
+            "sky130_fd_sc_hd__a211o_2": 2,
+            "sky130_fd_sc_hd__a211oi_2": 2,
+            "sky130_fd_sc_hd__a21bo_2": 2,
+            "sky130_fd_sc_hd__a21boi_2": 4,
+            "sky130_fd_sc_hd__a21o_2": 47,
+            "sky130_fd_sc_hd__a21oi_2": 61,
+            "sky130_fd_sc_hd__a221o_2": 1,
+            "sky130_fd_sc_hd__a221oi_2": 1,
+            "sky130_fd_sc_hd__a22o_2": 1,
+            "sky130_fd_sc_hd__a2bb2o_2": 6,
+            "sky130_fd_sc_hd__a311o_2": 1,
+            "sky130_fd_sc_hd__a31o_2": 12,
+            "sky130_fd_sc_hd__a31oi_2": 2,
+            "sky130_fd_sc_hd__a32o_2": 2,
+            "sky130_fd_sc_hd__a41o_2": 2,
+            "sky130_fd_sc_hd__and2_2": 77,
+            "sky130_fd_sc_hd__and2b_2": 29,
+            "sky130_fd_sc_hd__and3_2": 20,
+            "sky130_fd_sc_hd__and3b_2": 3,
+            "sky130_fd_sc_hd__and4_2": 1,
+            "sky130_fd_sc_hd__and4b_2": 2,
+            "sky130_fd_sc_hd__dfxtp_2": 96,
+            "sky130_fd_sc_hd__inv_2": 31,
+            "sky130_fd_sc_hd__mux2_1": 92,
+            "sky130_fd_sc_hd__nand2_2": 130,
+            "sky130_fd_sc_hd__nand2b_2": 53,
+            "sky130_fd_sc_hd__nand3_2": 2,
+            "sky130_fd_sc_hd__nand3b_2": 2,
+            "sky130_fd_sc_hd__nand4_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 79,
+            "sky130_fd_sc_hd__nor3_2": 6,
+            "sky130_fd_sc_hd__nor3b_2": 1,
+            "sky130_fd_sc_hd__nor4_2": 3,
+            "sky130_fd_sc_hd__o211a_2": 64,
+            "sky130_fd_sc_hd__o211ai_2": 4,
+            "sky130_fd_sc_hd__o21a_2": 33,
+            "sky130_fd_sc_hd__o21ai_2": 42,
+            "sky130_fd_sc_hd__o21ba_2": 9,
+            "sky130_fd_sc_hd__o21bai_2": 2,
+            "sky130_fd_sc_hd__o221a_2": 3,
+            "sky130_fd_sc_hd__o22a_2": 2,
+            "sky130_fd_sc_hd__o22ai_2": 1,
+            "sky130_fd_sc_hd__o311a_2": 10,
+            "sky130_fd_sc_hd__o31a_2": 40,
+            "sky130_fd_sc_hd__o31ai_2": 1,
+            "sky130_fd_sc_hd__o32a_2": 2,
+            "sky130_fd_sc_hd__o41a_2": 4,
+            "sky130_fd_sc_hd__o41ai_2": 1,
+            "sky130_fd_sc_hd__or2_2": 115,
+            "sky130_fd_sc_hd__or3_2": 15,
+            "sky130_fd_sc_hd__or3b_2": 17,
+            "sky130_fd_sc_hd__or4_2": 7,
+            "sky130_fd_sc_hd__or4bb_2": 1,
+            "sky130_fd_sc_hd__xnor2_2": 153,
+            "sky130_fd_sc_hd__xor2_2": 121
+         }
+      }
+}
+
+146. Printing statistics.
+
+=== crossbar_mac ===
+
+   Number of wires:               1352
+   Number of wire bits:           1464
+   Number of public wires:          26
+   Number of public wire bits:     138
+   Number of ports:                 10
+   Number of port bits:            122
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1422
+     sky130_fd_sc_hd__a2111o_2       1
+     sky130_fd_sc_hd__a211o_2        2
+     sky130_fd_sc_hd__a211oi_2       2
+     sky130_fd_sc_hd__a21bo_2        2
+     sky130_fd_sc_hd__a21boi_2       4
+     sky130_fd_sc_hd__a21o_2        47
+     sky130_fd_sc_hd__a21oi_2       61
+     sky130_fd_sc_hd__a221o_2        1
+     sky130_fd_sc_hd__a221oi_2       1
+     sky130_fd_sc_hd__a22o_2         1
+     sky130_fd_sc_hd__a2bb2o_2       6
+     sky130_fd_sc_hd__a311o_2        1
+     sky130_fd_sc_hd__a31o_2        12
+     sky130_fd_sc_hd__a31oi_2        2
+     sky130_fd_sc_hd__a32o_2         2
+     sky130_fd_sc_hd__a41o_2         2
+     sky130_fd_sc_hd__and2_2        77
+     sky130_fd_sc_hd__and2b_2       29
+     sky130_fd_sc_hd__and3_2        20
+     sky130_fd_sc_hd__and3b_2        3
+     sky130_fd_sc_hd__and4_2         1
+     sky130_fd_sc_hd__and4b_2        2
+     sky130_fd_sc_hd__dfxtp_2       96
+     sky130_fd_sc_hd__inv_2         31
+     sky130_fd_sc_hd__mux2_1        92
+     sky130_fd_sc_hd__nand2_2      130
+     sky130_fd_sc_hd__nand2b_2      53
+     sky130_fd_sc_hd__nand3_2        2
+     sky130_fd_sc_hd__nand3b_2       2
+     sky130_fd_sc_hd__nand4_2        1
+     sky130_fd_sc_hd__nor2_2        79
+     sky130_fd_sc_hd__nor3_2         6
+     sky130_fd_sc_hd__nor3b_2        1
+     sky130_fd_sc_hd__nor4_2         3
+     sky130_fd_sc_hd__o211a_2       64
+     sky130_fd_sc_hd__o211ai_2       4
+     sky130_fd_sc_hd__o21a_2        33
+     sky130_fd_sc_hd__o21ai_2       42
+     sky130_fd_sc_hd__o21ba_2        9
+     sky130_fd_sc_hd__o21bai_2       2
+     sky130_fd_sc_hd__o221a_2        3
+     sky130_fd_sc_hd__o22a_2         2
+     sky130_fd_sc_hd__o22ai_2        1
+     sky130_fd_sc_hd__o311a_2       10
+     sky130_fd_sc_hd__o31a_2        40
+     sky130_fd_sc_hd__o31ai_2        1
+     sky130_fd_sc_hd__o32a_2         2
+     sky130_fd_sc_hd__o41a_2         4
+     sky130_fd_sc_hd__o41ai_2        1
+     sky130_fd_sc_hd__or2_2        115
+     sky130_fd_sc_hd__or3_2         15
+     sky130_fd_sc_hd__or3b_2        17
+     sky130_fd_sc_hd__or4_2          7
+     sky130_fd_sc_hd__or4bb_2        1
+     sky130_fd_sc_hd__xnor2_2      153
+     sky130_fd_sc_hd__xor2_2       121
+
+   Chip area for module '\crossbar_mac': 15187.065600
+     of which used for sequential elements: 2041.958400 (13.45%)
+
+147. Executing Verilog backend.
+Dumping module `\crossbar_mac'.
+
+148. Executing JSON backend.
