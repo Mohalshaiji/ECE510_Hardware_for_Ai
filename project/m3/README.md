@@ -1,5 +1,5 @@
 # Milestone 3 — RC-DFA Memcapacitive Reservoir Accelerator
-## ECE 510 Spring 2026 — Mohammad Al-Mouhamed
+## ECE 510 Spring 2026 — Mohammad Alshaiji
 
 ---
 
