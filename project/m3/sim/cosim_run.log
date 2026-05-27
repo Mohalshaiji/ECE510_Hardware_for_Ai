@@ -1,0 +1,70 @@
+VCD info: dumpfile sim/cosim_waveform.vcd opened for output.
+========================================
+ M3 End-to-End Co-Simulation
+ RC-DFA Memcapacitive Reservoir Accel
+ ECE 510 Spring 2026
+========================================
+ N_IN=64 N_RES=128 N_OUT=64 T=20
+ CLK 100 MHz  |  analog tau_128=50.8ps (ngspice)
+
+--- REGION 1: Host write (4 x 512b flits, 256 B = 64 x FP32) ---
+  flit[0] tdata[31:0]=3fd86325 tlast=0  ACCEPTED
+  flit[1] tdata[31:0]=3f0df8fa tlast=0  ACCEPTED
+  flit[2] tdata[31:0]=bfd35672 tlast=0  ACCEPTED
+  flit[3] tdata[31:0]=3e89f052 tlast=1  ACCEPTED
+  Write transaction: PASS
+
+--- REGION 2: Compute -- watching for 20 sample_pulses ---
+  sample_pulse[01]  t=0 ns
+  sample_pulse[02]  t=0 ns
+  sample_pulse[03]  t=0 ns
+  sample_pulse[04]  t=0 ns
+  sample_pulse[05]  t=0 ns
+  sample_pulse[06]  t=0 ns
+  sample_pulse[07]  t=0 ns
+  sample_pulse[08]  t=0 ns
+  sample_pulse[09]  t=0 ns
+  sample_pulse[10]  t=0 ns
+  sample_pulse[11]  t=0 ns
+  sample_pulse[12]  t=0 ns
+  sample_pulse[13]  t=0 ns
+  sample_pulse[14]  t=0 ns
+  sample_pulse[15]  t=0 ns
+  sample_pulse[16]  t=0 ns
+  sample_pulse[17]  t=0 ns
+  sample_pulse[18]  t=0 ns
+  sample_pulse[19]  t=0 ns
+  sample_pulse[20]  t=0 ns
+  sample_pulse count: 20/20  PASS
+
+--- REGION 3: Host read (4 x 512b flits) ---
+  flit[0] tdata[31:0]=3f151f11 tlast=0  RECEIVED
+  flit[1] tdata[31:0]=bc797de8 tlast=0  RECEIVED
+  flit[2] tdata[31:0]=bf1a6d67 tlast=0  RECEIVED
+  flit[3] tdata[31:0]=bb8939f3 tlast=1  RECEIVED
+  tlast on flit 3: PASS
+
+--- Numeric check: 64 channels, bit-exact vs Python model ---
+  ch[00] got=3f151f11 exp=3f151f11  OK
+  ch[01] got=3e721ec9 exp=3e721ec9  OK
+  ch[02] got=bed9e6f1 exp=bed9e6f1  OK
+  ch[03] got=3e6146c6 exp=3e6146c6  OK
+  ch[04] got=3cdcd834 exp=3cdcd834  OK
+  ch[05] got=3ee5e72b exp=3ee5e72b  OK
+  ch[06] got=3e61a760 exp=3e61a760  OK
+  ch[07] got=3e776794 exp=3e776794  OK
+  ch[60] got=bd17f5ab exp=bd17f5ab  OK
+  ch[61] got=be0f2358 exp=be0f2358  OK
+  ch[62] got=bf038c88 exp=bf038c88  OK
+  ch[63] got=bed8f9c5 exp=bed8f9c5  OK
+  Channels 64/64 matched bit-exact
+  Bit-exact check: PASS
+
+--- Re-entrancy: second full transaction ---
+  Second tx: 20 pulses + 4 flits returned  PASS
+
+========================================
+ PASS checks: 12   FAIL checks: 0
+RESULT: PASS
+========================================
+tb/tb_top.sv:217: $finish called at 1250000 (1ps)
