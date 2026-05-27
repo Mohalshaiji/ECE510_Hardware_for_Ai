@@ -1,0 +1,19 @@
+GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+Date: Tue May 26 18:46:23 2026
+
+
+gtkwave
+	-S
+	/dev/null
+	-O
+	sim/cosim_waveform.png
+	-x
+	sim/cosim_waveform.vcd
+
+
+
+GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+
+[0] start time.
+[1250000] end time.
+Exiting early because of --exit request.
