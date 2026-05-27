@@ -1,0 +1,86 @@
+================================================================================
+Power Report — Post-Route Estimation
+RC-DFA Memcapacitive Reservoir Accelerator
+ECE 510 Spring 2026 -- M3
+================================================================================
+Corner:   nom_tt_025C_1v80  (Nominal TT, 25°C, 1.80V)
+Run:      RUN_2026-05-26_18-46-52 / 55-openroad-stapostpnr
+Tool:     OpenROAD (OpenLane 2.3.7) -- internal power model
+Clock:    100 MHz  (10.000 ns period)
+Activity: Default switching activity (toggle rate 0.1 assumed by OpenROAD)
+================================================================================
+
+DIGITAL POWER (sky130A standard cells)
+---------------------------------------
+
+  Component            Power (mW)   % of Total
+  ------------------   ----------   ----------
+  Sequential logic        16.35       29.6%
+  Combinational logic     10.99       19.9%
+  Clock network           27.93       50.5%
+  ------------------   ----------   ----------
+  Total digital           55.27      100.0%
+
+  Internal power:         38.44 mW   (69.5%)
+  Switching power:        14.92 mW   (27.0%)
+  Leakage power:           1.91 mW    (3.5%)
+
+CLOCK NETWORK BREAKDOWN
+------------------------
+  CTS buffers:             1,070  (sky130_fd_sc_hd__buf_12 dominant)
+  Clock sinks:             4,117  flip-flops
+  Clock network power:    27.93 mW  (50.5% of total digital)
+
+  Note: Clock dominates because of high fanout (4,117 FFs driven from 1 clock
+  root through 1,070 CTS buffers on sky130A 180nm process, which has high
+  gate + wire capacitance per buffer compared to sub-28nm nodes).
+
+ANALOG POWER (128×128 RC crossbar, from ngspice)
+-------------------------------------------------
+  Model:        CV²f charging energy  (P = ½ × C_total × V² × f)
+  C_total:      3,276.8 fF  (128 cols × 25.6 fF/col wire capacitance)
+  V:            1.8 V  (sky130 nominal)
+  f:            100 MHz
+
+  Average power (full 128×128 array):   530.8 µW   (0.531 mW)
+  Power density:                         32.4 mW/mm²
+  Array area:                        16,384 µm²  (128×128 µm, 1 µm cell pitch)
+
+  Note: The crossbar is passive RC — no active switching elements. Power arises
+  from charging/discharging the column capacitances at each sample cycle.
+  Static leakage through R_leak = 100 kΩ per cell / 128 parallel = 781 Ω
+  equivalent per column is negligible (<1 µW) after full settling.
+
+TOTAL SYSTEM POWER SUMMARY
+---------------------------
+
+  Domain                     Power (mW)   % of System
+  -------------------------  ----------   -----------
+  Digital (sky130A cells)       55.27        99.05%
+  Analog (RC crossbar)           0.53         0.95%
+  -------------------------  ----------   -----------
+  Total system                  55.80       100.00%
+
+  The crossbar accounts for <1% of system power. The digital interface and
+  clock tree are the dominant consumers. This is expected: the crossbar is a
+  passive network; the digital logic runs actively on every clock cycle.
+
+POWER EFFICIENCY CONTEXT
+------------------------
+  Software baseline throughput:   18.8 samples/sec   (CPU, 85.12 s/epoch)
+  Target accelerated throughput:  75.2 samples/sec   (4.0× end-to-end, Amdahl)
+  System power at 4.0× speedup:  55.80 mW  (digital + analog)
+
+  Note: The CPU baseline power (Intel Core Ultra 9 275HX under full load) is
+  approximately 45W TDP. The accelerator at 55.8 mW represents a 800× reduction
+  in active compute power for the reservoir kernel specifically, though the host
+  CPU still runs the decoder and optimizer. Full system power comparison will be
+  reported in M4.
+
+================================================================================
+FLOW STATUS
+================================================================================
+  Power estimation method:  OpenROAD internal (post-route, RCX parasitics)
+  RCX extraction:           Step 54 (openroad-rcx) -- completed, nom/min/max
+  Power report files:       55-openroad-stapostpnr/nom_tt_025C_1v80/power.rpt
+  Status:                   COMPLETE -- power estimation succeeded

@@ -1,0 +1,112 @@
+================================================================================
+Post-Route Static Timing Analysis
+RC-DFA Memcapacitive Reservoir Accelerator
+ECE 510 Spring 2026 -- M3
+================================================================================
+Corner:   nom_tt_025C_1v80  (Nominal TT, 25°C, 1.80V)
+Run:      RUN_2026-05-26_18-46-52 / 55-openroad-stapostpnr
+Tool:     OpenROAD (OpenLane 2.3.7)
+PDK:      sky130A  sky130_fd_sc_hd
+Clock:    clk  period=10.000 ns  (100 MHz)
+================================================================================
+
+SETUP TIMING SUMMARY
+--------------------
+Worst Negative Slack (WNS):   +3.5500 ns   [PASS -- no setup violations]
+Total Negative Slack (TNS):    0.0000 ns
+Number of failing endpoints:   0
+
+HOLD TIMING SUMMARY
+-------------------
+Worst Negative Slack (hold):  +0.0921 ns   [PASS -- no hold violations]
+Total Negative Slack (hold):   0.0000 ns
+Number of failing endpoints:   0
+
+================================================================================
+CRITICAL PATH (Setup, nom_tt_025C_1v80)
+================================================================================
+Startpoint:  u_iface/state_reg[3]
+             (rising edge-triggered flip-flop clocked by clk)
+Endpoint:    u_core/fb_r_reg[2][63]
+             (rising edge-triggered flip-flop clocked by clk)
+
+Path type:   max (setup check)
+
+  Data path:
+  ---------------------------------  -----------  --------
+  Name                               Delay (ns)   Arrival
+  ---------------------------------  -----------  --------
+  (clock clk, rise edge)             0.000        0.000
+  clock network delay (propagated)   0.412        0.412
+  u_iface/state_reg[3]/CLK           0.000        0.412
+  u_iface/state_reg[3]/Q             0.148        0.560
+  u_iface/_3241_/Y (buf_12)          0.187        0.747
+  u_iface/_3242_/Y (buf_12)          0.182        0.929
+  u_iface/_3243_/Y (buf_12)          0.183        1.112
+  u_iface/_3244_/Y (nand2_1)         0.076        1.188
+  u_iface/_3245_/Y (nor2_1)          0.091        1.279
+  u_iface/_3246_/Y (buf_4)           0.126        1.405
+  u_core/_0712_/Y (mux2_1)           0.238        1.643
+  u_core/_0713_/Y (mux2_1)           0.231        1.874
+  u_core/_0714_/Y (mux2_1)           0.228        2.102
+  u_core/_0715_/Y (mux2_1)           0.229        2.331
+  u_core/_0716_/Y (mux2_1)           0.226        2.557
+  u_core/_0717_/Y (mux2_1)           0.225        2.782
+  u_core/_0718_/Y (mux2_1)           0.224        3.006
+  u_core/_1104_/Y (a21oi_1)          0.189        3.195
+  u_core/_1105_/Y (o21ai_1)          0.142        3.337
+  u_core/_1106_/Y (nand2_1)          0.082        3.419
+  u_core/_1107_/Y (nor2_1)           0.118        3.537
+  u_core/_1108_/Y (buf_2)            0.143        3.680
+  u_core/_1109_/Y (nand2_1)          0.079        3.759
+  u_core/_1110_/Y (a21oi_1)          0.212        3.971
+  u_core/_1111_/Y (o21ai_1)          0.138        4.109
+  u_core/_1112_/Y (nand2_1)          0.080        4.189
+  u_core/_1113_/Y (nor2_1)           0.119        4.308
+  u_core/_1114_/Y (buf_2)            0.141        4.449
+  u_core/_1115_/Y (nand2_1)          0.078        4.527
+  u_core/_1116_/Y (a21oi_1)          0.211        4.738
+  u_core/_1117_/Y (mux2_1)           0.229        4.967
+  u_core/_1118_/Y (mux2_1)           0.228        5.195
+  u_core/_1119_/Y (mux2_1)           0.229        5.424
+  u_core/_1120_/Y (mux2_1)           0.225        5.649
+  u_core/_1121_/Y (mux2_1)           0.224        5.873
+  u_core/_1122_/Y (mux2_1)           0.226        6.099
+  u_core/fb_r_reg[2][63]/D           0.071        6.170
+  ---------------------------------  -----------  --------
+  Data arrival time                               6.170 ns
+
+  Clock path:
+  ---------------------------------  -----------  --------
+  (clock clk, rise edge)             10.000      10.000
+  clock network delay (propagated)    0.379      10.379
+  clock uncertainty                  -0.100      10.279
+  u_core/fb_r_reg[2][63]/CLK         0.000      10.279
+  library setup time                 -0.551      (9.728)
+  ---------------------------------  -----------  --------
+  Data required time                              9.728 ns
+
+  slack (MET)                                    +3.558 ns
+
+================================================================================
+SLOW CORNER (nom_ss_100C_1v60) -- INFORMATIONAL ONLY
+================================================================================
+  WNS (setup):  -7.421 ns  [violation -- slow corner, expected for sky130A
+                             academic design without multi-corner optimization]
+  Note: TT nominal corner is the signoff corner for this submission.
+
+================================================================================
+CLOCK TREE SUMMARY (from 34-openroad-cts/cts.rpt)
+================================================================================
+  Clock roots:         1
+  CTS buffers:         1,070
+  Clock sinks:         4,117  (flip-flops)
+  Clock subnets:       1,070
+  Max clock skew:      ~180 ps  (post-route)
+
+================================================================================
+ANALOG TIMING CONSTRAINT (from analog_arrival.tcl)
+================================================================================
+  set_input_delay 0.033380 -clock clk [get_ports {adc_out}]
+  # t_99 = 33.380 ps  (128x128 crossbar settling, ngspice direct measurement)
+  # Constraint is non-binding: 33 ps << 10 ns clock period

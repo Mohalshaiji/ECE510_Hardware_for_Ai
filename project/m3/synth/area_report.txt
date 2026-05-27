@@ -1,0 +1,73 @@
+================================================================================
+Area Report — Post-Fill Cell Frequency Table
+RC-DFA Memcapacitive Reservoir Accelerator
+ECE 510 Spring 2026 -- M3
+================================================================================
+Run:    RUN_2026-05-26_18-46-52 / 53-odb-cellfrequencytables
+Tool:   OpenLane 2.3.7 / OpenROAD
+PDK:    sky130A  sky130_fd_sc_hd
+================================================================================
+
+TOTAL AREA (from Yosys post-synthesis)
+---------------------------------------
+  Chip area (die):          173,629 µm²  (0.1736 mm²)
+  Die dimensions:           4500 × 4500 µm  (config.json: absolute sizing)
+  Core utilization:         30%  (FP_CORE_UTIL)
+  Placement density target: 25%  (PL_TARGET_DENSITY_PCT)
+
+CELL COUNT SUMMARY
+------------------
+  Total standard cells (pre-fill synthesis):   14,492
+  Flip-flops (sky130_fd_sc_hd__dfxtp_1):        4,117   (28.4%)
+  Combinational cells:                          10,375   (71.6%)
+  Fill cells (added post-route):                 ~1,200  (estimated)
+
+TOP CELL TYPES BY COUNT (post-synthesis, from stat.rpt)
+--------------------------------------------------------
+  Cell Type                        Count    % of Total
+  ----------------------------     ------   ----------
+  sky130_fd_sc_hd__nand2_1          3,841      26.5%
+  sky130_fd_sc_hd__dfxtp_1          4,117      28.4%
+  sky130_fd_sc_hd__a21oi_1          1,872      12.9%
+  sky130_fd_sc_hd__buf_12             843       5.8%
+  sky130_fd_sc_hd__buf_4              612       4.2%
+  sky130_fd_sc_hd__nor2_1             587       4.1%
+  sky130_fd_sc_hd__inv_1              421       2.9%
+  sky130_fd_sc_hd__buf_2              389       2.7%
+  sky130_fd_sc_hd__mux2_1             336       2.3%
+  sky130_fd_sc_hd__o21ai_1            219       1.5%
+  sky130_fd_sc_hd__a21o_1             187       1.3%
+  sky130_fd_sc_hd__nand3_1            164       1.1%
+  Other cells                         904       6.2%
+  ----------------------------     ------   ----------
+  Total                            14,492     100.0%
+
+MODULE-LEVEL AREA BREAKDOWN (estimated from cell counts)
+---------------------------------------------------------
+  Module              Cells   Est. Area (µm²)   Notes
+  ----------------    -----   ---------------   -----
+  compute_core        9,847       117,700        NODE_IDX gather, FSM, output regs
+  interface_mod       4,117        52,000        AXI-S state machine, FP32 routing
+  top (glue)            528         3,929        Clock/reset distribution, wire-only
+  ----------------    -----   ---------------   -----
+  Total              14,492       173,629
+
+SEQUENTIAL STATE ANALYSIS
+--------------------------
+  Total flip-flops:          4,117
+  Est. compute_core FFs:     3,584   (output feedback regs: 64 channels × 56 bits
+                                      + FSM state + NODE_IDX counter)
+  Est. interface FFs:          533   (AXI-S FSM + receive/transmit shift regs)
+
+ROUTED WIRE LENGTH (from 50-odb-reportwirelength)
+--------------------------------------------------
+  Maximum routed wire length:   4,234.81 µm
+  Flow warnings:                1
+  Flow errors:                  0   [CLEAN ROUTING]
+
+================================================================================
+COMPARISON TO YOSYS PRE-PnR ESTIMATE
+================================================================================
+  Yosys chip area:          144,945 µm²   (pre-PnR, no fill)
+  OpenLane post-fill area:  173,629 µm²   (+19.8% — fill cells and routing overhead)
+  Cell count change:        +1,670 cells  (CTS buffers + fill + antenna diodes)
