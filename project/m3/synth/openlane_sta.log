@@ -1,0 +1,49 @@
+OpenSTA 3.1.0 66c2930332 Copyright (c) 2026, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Warning 1171: sky130_fd_sc_hd__tt_025C_1v80.lib line 23, default_fanout_load is 0.0.
+Analog arrival constraint loaded from analog_arrival.tcl
+
+=== Setup timing ===
+Startpoint: _31619_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _27800_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+    Delay      Time   Description
+-------------------------------------------------------------
+   0.0000    0.0000   clock clk (rise edge)
+   0.0000    0.0000   clock network delay (ideal)
+   0.0000    0.0000 ^ _31619_/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.3058    0.3058 v _31619_/Q (sky130_fd_sc_hd__dfxtp_1)
+ 138.6278  138.9337 ^ _13905_/Y (sky130_fd_sc_hd__nor4_1)
+   0.5117  139.4454 v _13908_/Y (sky130_fd_sc_hd__nand2_1)
+   2.7967  142.2420 ^ _13909_/Y (sky130_fd_sc_hd__a21oi_1)
+   0.0000  142.2420 ^ _27800_/D (sky130_fd_sc_hd__dfxtp_1)
+           142.2420   data arrival time
+
+  10.0000   10.0000   clock clk (rise edge)
+   0.0000   10.0000   clock network delay (ideal)
+   0.0000   10.0000   clock reconvergence pessimism
+            10.0000 ^ _27800_/CLK (sky130_fd_sc_hd__dfxtp_1)
+  -0.6870    9.3130   library setup time
+             9.3130   data required time
+-------------------------------------------------------------
+             9.3130   data required time
+          -142.2420   data arrival time
+-------------------------------------------------------------
+          -132.9290   slack (VIOLATED)
+
+
+
+=== Hold timing ===
+
+=== WNS / TNS ===
+wns max -132.93
+tns max -384761.59
+
+=== Cell usage ===
+Error: sta_run.tcl, 31 invalid command name "report_cell_usage"

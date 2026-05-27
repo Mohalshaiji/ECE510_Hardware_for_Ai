@@ -1,0 +1,22 @@
+Analog Characterisation Summary -- 128x128 Full Array
+RC-DFA Memcapacitive Crossbar  --  ECE 510 Spring 2026
+============================================================
+
+TIMING
+  t_10         = 3.595 ps
+  t_90         = 18.013 ps
+  t_99         = 33.380 ps
+  tau_RC       = 6.562 ps  (0.006562 ns)
+  Bandwidth    = 24.253 GHz
+  Margin @1GHz = 0.9934 ns  (PASS)
+
+POWER (128x128 array)
+  Average      = 530.8416 uW
+
+POWER DENSITY
+  32.4000 mW/mm^2  (over 16384 um^2)
+
+ROUTING (128x128)
+  Total wire   = 4.194 mm
+  Row: 16384 um/row  R=12.80 Ohm  C=25.60 fF
+  Col: 16384 um/col  R=12.80 Ohm  C=25.60 fF
