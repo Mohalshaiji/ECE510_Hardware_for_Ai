@@ -1,0 +1,6 @@
+# Roofline Analysis
+## Codefest 9 | ECE 410/510 | Spring 2026
+
+The accelerator landed at 2,294 GFLOP/s on the roofline, well below the expected 32,768,000 GFLOP/s analog ceiling and also below the 16,177,000 GFLOP/s lower-bound attainable. The HW point sits above the HW ridge of 128 FLOP/byte at AI = 2,465 FLOP/byte, so it is compute-bound on the hardware roofline, but the actual throughput is four orders of magnitude below the ceiling.
+
+The gap has one root cause: the digital FSM processes one spatial location (64 channels) per call. The software kernel processes all SP = 262,144 spatial locations in a single batched matrix multiply. Each HW call takes 55 cycles (550 ns) and covers 1/262,144 of the work the SW call covers in 508 ms. The effective kernel speedup is 13.7x, giving a 3.42x end-to-end training speedup (18.8 to 64.27 samples/sec), both matching the benchmark_results.md table. The crossbar physically runs the analog dynamics at 1 GHz, but the interface serializes spatial locations one at a time through the 64-channel AXI-S port, so the analog compute advantage is fully consumed by the serialization overhead. Closing the gap requires either widening the interface to accept a full spatial tile (B x H x W x C) in a single transaction, or restructuring the training loop to pipeline spatial batches across multiple DUT instances.
