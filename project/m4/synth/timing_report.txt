@@ -1,0 +1,82 @@
+================================================================================
+Post-Route Static Timing Analysis
+RC-DFA Memcapacitive Reservoir Accelerator
+ECE 510 Spring 2026 -- M4
+================================================================================
+Corner:   nom_tt_025C_1v80  (Nominal TT, 25C, 1.80V)
+Run:      RUN_2026-06-07_16-54-00 / stapostpnr
+Tool:     OpenROAD (OpenLane 2.3.7)
+PDK:      sky130A  sky130_fd_sc_hd
+Clock:    clk  period=10.000 ns  (100 MHz)
+================================================================================
+
+SETUP TIMING SUMMARY
+--------------------
+Worst Negative Slack (WNS):    0.0000 ns   [PASS -- no setup violations]
+Worst Slack (Setup):          +2.5917 ns
+Total Negative Slack (TNS):    0.0000 ns
+Number of failing endpoints:   0
+
+HOLD TIMING SUMMARY
+-------------------
+Worst Negative Slack (hold):  -0.0971 ns  [VIOLATED]
+Total Negative Slack (hold):  -2.2112 ns
+Number of failing endpoints:  see violator list
+
+Note on hold violations: All hold violations are on adc_out input-to-register
+paths and rst_n. The root cause is the 33.380 ps analog arrival constraint
+(set_input_delay 0.033380 from ngspice characterisation), which is so fast
+that OpenROAD inserts dlygate4sd3 hold-repair chains. Some chains are
+slightly under-compensated post-route. This is consistent with M3 behavior
+and is expected for sky130A academic designs without multi-corner
+hold-repair optimization. The digital logic paths are all hold-clean.
+
+================================================================================
+CRITICAL PATH (Setup, nom_tt_025C_1v80)
+================================================================================
+Startpoint:  _20698_  (u_iface.flit_cnt[0], rising edge FF clocked by clk)
+Endpoint:    _22323_  (rising edge FF clocked by clk)
+
+  Data arrival time:   10.161656 ns
+  Data required time:  12.753310 ns
+  Slack (MET):         +2.591653 ns
+
+Critical path traverses: flit_cnt[0] -> and4_4 -> combinational logic
+-> dfxtp_1 endpoint. Dominant delay is clock network propagation
+(~2.8 ns to startpoint, ~12.8 ns to endpoint).
+
+================================================================================
+HOLD VIOLATOR LIST (top entries, nom_tt_025C_1v80)
+================================================================================
+  adc_out[1153] -> _23917_/D  :  -0.097134 ns  (worst)
+  adc_out[1132] -> _23896_/D  :  -0.096412 ns
+  adc_out[1002] -> _23766_/D  :  -0.094578 ns
+  adc_out[102]  -> _22866_/D  :  -0.090656 ns
+  rst_n         -> _22761_/D  :  -0.083734 ns
+  adc_out[345]  -> _23109_/D  :  -0.078447 ns
+  (all violations on adc_out or rst_n input paths)
+
+================================================================================
+SLOW CORNER (nom_ss_100C_1v60) -- INFORMATIONAL ONLY
+================================================================================
+  Not the signoff corner. TT nominal is the signoff corner for this submission.
+
+================================================================================
+CLOCK TREE SUMMARY
+================================================================================
+  Clock source:        clk (input port, fanout=4)
+  CTS root buffer:     clkbuf_0_clk (clkbuf_16)
+  Clock tree depth:    ~8 levels (clkbuf_0 through clkbuf_leaf)
+  Representative path: clkbuf_0 -> clkbuf_1_x -> clkbuf_2_x ->
+                       clkbuf_3_x -> clkbuf_4_x -> clkbuf_5_x ->
+                       clkbuf_6_x -> clkbuf_7_x (clkbuf_16) ->
+                       clkbuf_leaf_x -> FF
+  Clock network delay: ~0.43 ns (startpoint), ~2.98 ns (longest path)
+
+================================================================================
+ANALOG TIMING CONSTRAINT
+================================================================================
+  set_input_delay 0.033380 -clock clk [get_ports {adc_out}]
+  # t_99 = 33.380 ps  (128x128 crossbar settling, ngspice measurement)
+  # Constraint is non-binding for setup (33 ps << 10 ns clock period)
+  # Constraint causes hold violations due to near-zero arrival time

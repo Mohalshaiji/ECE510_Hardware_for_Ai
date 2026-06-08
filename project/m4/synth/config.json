@@ -1,0 +1,23 @@
+{
+    "DESIGN_NAME": "top",
+    "VERILOG_FILES": [
+        "dir::../rtl/top.sv",
+        "dir::../rtl/interface.sv",
+        "dir::../rtl/compute_core.sv"
+    ],
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 10.0,
+    "PDK": "sky130A",
+    "STD_CELL_LIBRARY": "sky130_fd_sc_hd",
+    "SYNTH_STRATEGY": "AREA 0",
+    "MAX_FANOUT_CONSTRAINT": 8,
+    "FP_CORE_UTIL": 30,
+    "PL_TARGET_DENSITY_PCT": 25,
+    "DIE_AREA": "0 0 4500 4500",
+    "FP_SIZING": "absolute",
+    "RUN_POST_GRT_RESIZER_TIMING": true,
+    "RUN_CTS": true,
+    "RUN_FILL_INSERTION": true,
+    "PNR_SDC_FILE": "dir::pnr_constraints.sdc",
+    "SIGNOFF_SDC_FILE": "dir::pnr_constraints.sdc"
+}

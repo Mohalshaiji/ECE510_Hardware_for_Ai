@@ -1,0 +1,56 @@
+VCD info: dumpfile sim/final_waveform.vcd opened for output.
+========================================
+ M4 End-to-End Co-Simulation
+ RC-DFA Memcapacitive Reservoir Accel
+ ECE 510 Spring 2026
+========================================
+ N_IN=4096  N_RES=128  N_OUT=64  T=20
+ N_FLITS_IN=256  N_FLITS_OUT=4
+ CLK 100 MHz  |  analog tau_128=50.8ps (ngspice)
+ Task 1: 256-flit input (4096 FP32 channels)
+ Task 2: double-buffer pipeline overlap
+ Task 3: registered start_r (1-cycle enable pipeline)
+
+--- TEST 1: Write 256 flits (N_IN=4096) ---
+  All 256 flits accepted: PASS
+
+--- TEST 2: Compute — watching for 20 sample_pulses ---
+  sample_pulse count: 20/20  PASS
+
+--- TEST 3: Read 4 output flits ---
+  flit[0] tdata[31:0]=3f151f11 tlast=0  RECEIVED
+  flit[1] tdata[31:0]=bc797de8 tlast=0  RECEIVED
+  flit[2] tdata[31:0]=bf1a6d67 tlast=0  RECEIVED
+  flit[3] tdata[31:0]=bb8939f3 tlast=1  RECEIVED
+  tlast on flit 3: PASS
+
+--- TEST 4: Numeric check — 64 channels vs Python reference ---
+  ch[00] got=3f151f11 exp=3f151f11  OK
+  ch[01] got=3e721ec9 exp=3e721ec9  OK
+  ch[02] got=bed9e6f1 exp=bed9e6f1  OK
+  ch[03] got=3e6146c6 exp=3e6146c6  OK
+  ch[04] got=3cdcd834 exp=3cdcd834  OK
+  ch[05] got=3ee5e72b exp=3ee5e72b  OK
+  ch[06] got=3e61a760 exp=3e61a760  OK
+  ch[07] got=3e776794 exp=3e776794  OK
+  ch[60] got=bd17f5ab exp=bd17f5ab  OK
+  ch[61] got=be0f2358 exp=be0f2358  OK
+  ch[62] got=bf038c88 exp=bf038c88  OK
+  ch[63] got=bed8f9c5 exp=bed8f9c5  OK
+  Channels 64/64 matched bit-exact
+  Bit-exact check: PASS
+
+--- TEST 5: Pipeline overlap (Task 2 double-buffer) ---
+  Accepted 256/256 flits during overlap
+  Stall cycles during overlap: 0
+  Pipeline overlap: PASS
+  Call 2 output drained: PASS
+
+--- TEST 6: Re-entrancy (third full transaction) ---
+  Third tx: 20 pulses + output received  PASS
+
+========================================
+ PASS checks: 11   FAIL checks: 0
+RESULT: PASS
+========================================
+tb/tb_top.sv:409: $finish called at 14410000 (1ps)

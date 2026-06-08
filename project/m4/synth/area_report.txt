@@ -1,0 +1,58 @@
+154. Printing statistics.
+
+=== top ===
+
+   Number of wires:              13972
+   Number of wire bits:          19215
+   Number of public wires:        3623
+   Number of public wire bits:    8866
+   Number of ports:                 14
+   Number of port bits:           5257
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              14538
+     sky130_fd_sc_hd__a211o_2        1
+     sky130_fd_sc_hd__a21boi_2       1
+     sky130_fd_sc_hd__a21o_2         5
+     sky130_fd_sc_hd__a21oi_2        5
+     sky130_fd_sc_hd__a221o_2        1
+     sky130_fd_sc_hd__a22o_2         7
+     sky130_fd_sc_hd__a31o_2         1
+     sky130_fd_sc_hd__a32o_2         3
+     sky130_fd_sc_hd__a41o_2         2
+     sky130_fd_sc_hd__and2_2        20
+     sky130_fd_sc_hd__and2b_2        1
+     sky130_fd_sc_hd__and3_2         4
+     sky130_fd_sc_hd__and3b_2        1
+     sky130_fd_sc_hd__and4_2         1
+     sky130_fd_sc_hd__and4bb_2       1
+     sky130_fd_sc_hd__conb_1        65
+     sky130_fd_sc_hd__dfxtp_2     4124
+     sky130_fd_sc_hd__inv_2        519
+     sky130_fd_sc_hd__mux2_1       513
+     sky130_fd_sc_hd__nand2_2      518
+     sky130_fd_sc_hd__nand2b_2       3
+     sky130_fd_sc_hd__nand3_2        2
+     sky130_fd_sc_hd__nor2_2         9
+     sky130_fd_sc_hd__nor4_2         2
+     sky130_fd_sc_hd__nor4b_2        1
+     sky130_fd_sc_hd__o211a_2     4102
+     sky130_fd_sc_hd__o21ai_2      514
+     sky130_fd_sc_hd__o21ba_2        1
+     sky130_fd_sc_hd__o221a_2      513
+     sky130_fd_sc_hd__o221ai_2       1
+     sky130_fd_sc_hd__o2bb2a_2       1
+     sky130_fd_sc_hd__o31a_2         2
+     sky130_fd_sc_hd__o31ai_2        1
+     sky130_fd_sc_hd__or2_2       3586
+     sky130_fd_sc_hd__or3_2          2
+     sky130_fd_sc_hd__or3b_2         1
+     sky130_fd_sc_hd__or4_2          1
+     sky130_fd_sc_hd__or4b_2         1
+     sky130_fd_sc_hd__xnor2_2        1
+     sky130_fd_sc_hd__xor2_2         1
+
+   Chip area for module '\top': 173463.865600
+     of which used for sequential elements: 87719.129600 (50.57%)
+
